@@ -45,9 +45,15 @@ function App() {
     setFinished(true);
   }
 
-  return ( <div className="main">
-            <Navbar current={score} top={topScore}/>
-            <Game scoreIncrement={updateScore} finishGame={toggleFinish} cardList={cardList} setCardList={setCardList}/>
+  return ( 
+          <div className="main">
+            {cardList.length === 0 ? <h2>Loading cards...</h2> : 
+            <>
+              <Navbar current={score} top={topScore}/>
+              <Game scoreIncrement={updateScore} finishGame={toggleFinish} cardList={cardList} setCardList={setCardList}/>
+            </> 
+            }
+            
           </div>
   );
 }
